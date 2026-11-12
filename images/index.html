@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover elegant heels, sandals and slippers at Glam Your Feet. Walk Beautifully. Step Out in Style.">
+  <title>Glam Your Feet | Walk Beautifully</title>
+
+  <style>
+    :root {
+      --brown: #4b2e24;
+      --dark: #302019;
+      --medium: #80604d;
+      --gold: #b18a58;
+      --cream: #faf6ef;
+      --beige: #eee4d7;
+      --white: #fffefa;
+      --muted: #776b63;
+      --border: #e6d9ca;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .announcement {
+      background: var(--brown);
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+    }
+
+    header {
+      background: var(--white);
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      color: var(--brown);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 29px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      line-height: 1.2;
+    }
+
+    .brand small {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      font-weight: normal;
+      letter-spacing: 3px;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 510px;
+      background:
+        linear-gradient(90deg, rgba(32, 19, 13, .72), rgba(32, 19, 13, .12)),
+        url("images/hero.jpg") center 55% / cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 70px 9%;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 560px;
+    }
+
+    .eyebrow {
+      color: #e7c99e;
+      letter-spacing: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6vw, 68px);
+      font-weight: normal;
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 430px;
+      font-size: 15px;
+      margin-bottom: 30px;
+      color: #f7eee6;
+    }
+
+    .primary-btn, .secondary-btn {
+      display: inline-block;
+      border: none;
+      padding: 14px 27px;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+
+    .primary-btn {
+      background: var(--gold);
+      color: white;
+    }
+
+    .primary-btn:hover {
+      background: #967044;
+      transform: translateY(-2px);
+    }
+
+    .secondary-btn {
+      background: var(--brown);
+      color: white;
+    }
+
+    .secondary-btn:hover {
+      background: var(--dark);
+    }
+
+    section {
+      padding: 75px 7%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--brown);
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: normal;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 9px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 13px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(65, 40, 25, .09);
+    }
+
+    .product-image-wrap {
+      position: relative;
+      background: var(--beige);
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
+      transition: transform .4s ease;
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.035);
+    }
+
+    .image-hint {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(48, 32, 25, .78);
+      color: white;
+      padding: 5px 9px;
+      font-size: 10px;
+      letter-spacing: .5px;
+      pointer-events: none;
+    }
+
+    .product-info {
+      padding: 18px 7px 8px;
+    }
+
+    .product-info h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      font-weight: normal;
+      color: var(--brown);
+      margin-bottom: 5px;
+    }
+
+    .price {
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 17px;
+      margin-bottom: 15px;
+    }
+
+    .size-label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .size-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 17px;
+    }
+
+    .size-btn {
+      min-width: 39px;
+      padding: 7px 10px;
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--brown);
+      font-size: 12px;
+    }
+
+    .size-btn.selected {
+      background: var(--brown);
+      color: white;
+      border-color: var(--brown);
+    }
+
+    .size-btn:disabled {
+      color: #aaa;
+      background: #f0ece7;
+      text-decoration: line-through;
+      cursor: not-allowed;
+    }
+
+    .stock-note {
+      color: #a34b3e;
+      font-size: 11px;
+      margin: -9px 0 13px;
+    }
+
+    .buy-btn {
+      width: 100%;
+      padding: 13px;
+      background: var(--brown);
+      border: 1px solid var(--brown);
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+      transition: .2s;
+    }
+
+    .buy-btn:hover:not(:disabled) {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .buy-btn:disabled {
+      background: #c9beb4;
+      border-color: #c9beb4;
+      cursor: not-allowed;
+    }
+
+    .enquire-link {
+      display: block;
+      text-align: center;
+      margin-top: 12px;
+      color: var(--medium);
+      font-size: 12px;
+      text-decoration: underline;
+    }
+
+    .about {
+      background: var(--beige);
+      text-align: center;
+    }
+
+    .about-content {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .about h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 38px;
+      font-weight: normal;
+      color: var(--brown);
+      margin-bottom: 18px;
+    }
+
+    .about p {
+      color: #66564b;
+      font-size: 15px;
+    }
+
+    .payment-section {
+      display: none;
+      background: #f3eadf;
+      padding-top: 55px;
+      padding-bottom: 65px;
+    }
+
+    .payment-section.visible {
+      display: block;
+    }
+
+    .payment-panel {
+      max-width: 650px;
+      margin: auto;
+      padding: 32px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 35px rgba(65, 40, 25, .07);
+    }
+
+    .payment-panel h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: normal;
+      text-align: center;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+
+    .payment-intro {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .order-summary {
+      display: flex;
+      gap: 17px;
+      align-items: center;
+      background: var(--cream);
+      padding: 14px;
+      margin-bottom: 23px;
+    }
+
+    .order-summary img {
+      width: 95px;
+      height: 95px;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
+
+    .order-summary h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--brown);
+      font-size: 19px;
+      font-weight: normal;
+    }
+
+    .order-summary p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .order-summary .order-price {
+      color: var(--gold);
+      font-size: 19px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .payment-details {
+      border: 1px solid var(--border);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .payment-details h3 {
+      color: var(--brown);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .detail-row:last-of-type {
+      border-bottom: none;
+    }
+
+    .detail-row strong {
+      color: var(--brown);
+      text-align: right;
+    }
+
+    .copy-btn {
+      width: 100%;
+      padding: 11px;
+      background: var(--beige);
+      color: var(--brown);
+      border: 1px solid var(--border);
+      margin-top: 12px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .copy-btn:hover {
+      background: #e5d4c1;
+    }
+
+    .instructions {
+      margin: 20px 0;
+      padding-left: 20px;
+      color: #66564b;
+      font-size: 13px;
+    }
+
+    .instructions li {
+      margin-bottom: 9px;
+      padding-left: 4px;
+    }
+
+    .payment-warning {
+      background: #f8f0e5;
+      border-left: 3px solid var(--gold);
+      padding: 13px;
+      font-size: 12px;
+      color: #655347;
+      margin-bottom: 20px;
+    }
+
+    .payment-actions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .payment-actions a {
+      text-align: center;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 18px auto 0;
+      background: transparent;
+      border: none;
+      color: var(--medium);
+      text-decoration: underline;
+      font-size: 13px;
+    }
+
+    .contact {
+      text-align: center;
+      background: var(--white);
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .contact-numbers {
+      margin: 22px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .contact-numbers a {
+      color: var(--brown);
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #e9ddd2;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 12px;
+      letter-spacing: .5px;
+    }
+
+    footer strong {
+      color: #e6c89e;
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 1px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 50;
+      background: #267b48;
+      color: white;
+      padding: 13px 18px;
+      border-radius: 30px;
+      font-size: 12px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.2);
+    }
+
+    .whatsapp-float:hover {
+      background: #1c6238;
+    }
+
+    /* Image enlargement */
+    .image-modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      inset: 0;
+      background: rgba(20, 13, 9, .92);
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+    }
+
+    .image-modal.open {
+      display: flex;
+    }
+
+    .image-modal img {
+      max-width: 92%;
+      max-height: 88vh;
+      object-fit: contain;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 17px;
+      right: 25px;
+      color: white;
+      background: transparent;
+      border: none;
+      font-size: 38px;
+      line-height: 1;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .product-image {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .announcement {
+        font-size: 10px;
+      }
+
+      header {
+        padding: 17px 5%;
+      }
+
+      .brand {
+        font-size: 25px;
+      }
+
+      nav {
+        gap: 12px;
+        font-size: 10px;
+      }
+
+      .hero {
+        min-height: 440px;
+        padding: 55px 7%;
+        background-position: 60% center;
+      }
+
+      .hero h1 {
+        font-size: 44px;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .product-image {
+        height: 330px;
+      }
+
+      .payment-panel {
+        padding: 20px 15px;
+      }
+
+      .payment-panel h2 {
+        font-size: 29px;
+      }
+
+      .order-summary img {
+        width: 78px;
+        height: 85px;
+      }
+
+      .detail-row {
+        font-size: 12px;
+      }
+
+      .contact-numbers {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .whatsapp-float {
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="announcement">
+    ELEGANCE IN EVERY STEP · WALK BEAUTIFULLY
+  </div>
+
+  <header>
+    <a href="#home" class="brand">
+      GLAM YOUR FEET
+      <small>WALK BEAUTIFULLY. STEP OUT IN STYLE.</small>
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Your style begins from the ground up</div>
+        <h1>Walk Beautifully.<br>Step Out in Style.</h1>
+        <p>
+          Discover footwear that brings elegance, confidence and a little
+          extra glamour to every step.
+        </p>
+        <a href="#collections" class="primary-btn">Explore Collection</a>
+      </div>
+    </section>
+
+    <section id="collections">
+      <div class="section-heading">
+        <div class="eyebrow">Our collection</div>
+        <h2>Find Your Perfect Pair</h2>
+        <p>Choose your favourite style and select your available size.</p>
+      </div>
+
+      <div class="products" id="product-list"></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-content">
+        <div class="eyebrow">A little about us</div>
+        <h2>Style in Every Step</h2>
+        <p>
+          At Glam Your Feet, we believe the right pair of footwear can
+          complete your look and elevate your confidence. Explore our
+          collection of stylish heels, sandals and slippers, selected
+          to help you step out beautifully.
+        </p>
+      </div>
+    </section>
+
+    <section class="payment-section" id="payment">
+      <div class="payment-panel">
+        <h2>Complete Your Order</h2>
+        <p class="payment-intro">
+          Review your selection and follow the payment instructions below.
+        </p>
+
+        <div class="order-summary">
+          <img id="order-image" src="" alt="Selected footwear">
+          <div>
+            <h3 id="order-name"></h3>
+            <p id="order-size"></p>
+            <p class="order-price" id="order-price"></p>
+          </div>
+        </div>
+
+        <div class="payment-details">
+          <h3>Mobile Money Payment</h3>
+
+          <div class="detail-row">
+            <span>Account name</span>
+            <strong>Priscilla Opoku</strong>
+          </div>
+
+          <div class="detail-row">
+            <span>MoMo number</span>
+            <strong id="momo-display">0599735865</strong>
+          </div>
+
+          <div class="detail-row">
+            <span>Amount to pay</span>
+            <strong id="payment-amount"></strong>
+          </div>
+
+          <button class="copy-btn" id="copy-momo">
+            COPY MOMO NUMBER
+          </button>
+        </div>
+
+        <h3 style="font-family: Georgia, serif; color: var(--brown); font-weight: normal;">
+          How to pay
+        </h3>
+
+        <ol class="instructions">
+          <li>Copy the Mobile Money number displayed above.</li>
+          <li>Open your Mobile Money service on your phone.</li>
+          <li>Send the exact amount displayed for your order.</li>
+          <li>Keep your payment confirmation message.</li>
+          <li>Contact Glam Your Feet to submit your payment confirmation.</li>
+        </ol>
+
+        <div class="payment-warning">
+          <strong>Please note:</strong> Your order is not confirmed simply
+          by opening this page or sending a payment message. Your payment
+          must first be verified by Glam Your Feet. Stock will be updated
+          after payment is confirmed.
+        </div>
+
+        <div class="payment-actions">
+          <a id="payment-whatsapp" class="primary-btn" href="#" target="_blank" rel="noopener">
+            SEND PAYMENT CONFIRMATION
+          </a>
+
+          <a href="tel:+233548095105" class="secondary-btn">
+            CALL TO CONFIRM PAYMENT
+          </a>
+        </div>
+
+        <button class="back-btn" id="back-to-shop">
+          ← Return to the collection
+        </button>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-heading">
+        <div class="eyebrow">We would love to hear from you</div>
+        <h2>Get in Touch</h2>
+        <p>Have a question about a product or your order? Contact us.</p>
+      </div>
+
+      <div class="contact-numbers">
+        <a href="tel:+233548095105">+233 548 095 105</a>
+        <a href="tel:+233559786298">+233 559 786 298</a>
+      </div>
+
+      <div class="contact-buttons">
+        <a class="primary-btn" href="https://wa.me/233548095105" target="_blank" rel="noopener">
+          WHATSAPP US
+        </a>
+        <a class="secondary-btn" href="tel:+233559786298">
+          CALL US
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>GLAM YOUR FEET</strong>
+    <p>Walk Beautifully. Step Out in Style.</p>
+    <p>© <span id="year"></span> Glam Your Feet. All rights reserved.</p>
+  </footer>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/233548095105"
+     target="_blank"
+     rel="noopener">
+    WhatsApp Us
+  </a>
+
+  <div class="image-modal" id="image-modal" aria-label="Enlarged product image">
+    <button class="modal-close" id="modal-close" aria-label="Close image">&times;</button>
+    <img id="modal-image" src="" alt="Enlarged footwear image">
+  </div>
+
+  <script>
+    /* ==========================================
+       GLAM YOUR FEET - STORE INFORMATION
+       Edit your products and stock in this section.
+       ========================================== */
+
+    const MOMO_NUMBER = "0599735865";
+    const MOMO_NAME = "Priscilla Opoku";
+    const WHATSAPP_NUMBER = "233548095105";
+
+    /*
+      PRODUCT STOCK MANAGEMENT
+
+      To mark a size as SOLD OUT, change:
+      available: true
+
+      to:
+      available: false
+
+      Example:
+      { number: 40, available: false }
+
+      Remember to publish the updated website after editing.
+    */
+
+    const products = [
+      {
+        id: 1,
+        name: "Zara Nude Slingback Heel",
+        price: 170,
+        image: "images/shoe6.jpg",
+        sizes: [
+          { number: 40, available: true }
+        ]
+      },
+      {
+        id: 2,
+        name: "Zebra Print Statement Heels",
+        price: 150,
+        image: "images/shoe10.jpg",
+        sizes: [
+          { number: 39, available: true },
+          { number: 40, available: false }
+        ]
+      },
+      {
+        id: 3,
+        name: "Jessy Bow Slingback Heel",
+        price: 130,
+        image: "images/shoe9.jpg",
+        sizes: [
+          { number: 40, available: true },
+          { number: 39, available: false }
+        ]
+      },
+      {
+        id: 4,
+        name: "Clear-strap Block Heel",
+        price: 130,
+        image: "images/shoe11.jpg",
+        sizes: [
+          { number: 38, available: true },
+          { number: 39, available: true }
+        ]
+      },
+      {
+        id: 5,
+        name: "Pearl Bow Heel",
+        price: 130,
+        image: "images/shoe12.jpg",
+        sizes: [
+          { number: 40, available: true },
+          { number: 39, available: false }
+        ]
+      },
+      {
+        id: 6,
+        name: "Rhinestone Bow Slingback Heel",
+        price: 130,
+        image: "images/shoe14.jpg",
+        sizes: [
+          { number: 40, available: true },
+          { number: 39, available: false }
+        ]
+      },
+      {
+        id: 7,
+        name: "Studded Kitten Slingback Heel",
+        price: 140,
+        image: "images/shoe17.jpg",
+        sizes: [
+          { number: 40, available: true },
+          { number: 39, available: false }
+        ]
+      },
+      {
+        id: 8,
+        name: "Zara Bow Kitten Heel",
+        price: 150,
+        image: "images/shoe18.jpg",
+        sizes: [
+          { number: 41, available: true },
+          { number: 40, available: true }
+        ]
+      },
+      {
+        id: 9,
+        name: "Merlot Block Heel",
+        price: 120,
+        image: "images/shoe15.jpg",
+        sizes: [
+          { number: 38, available: true },
+          { number: 39, available: false }
+        ]
+      },
+      {
+        id: 10,
+        name: "Navy Suede Slingback block Heel",
+        price: 100,
+        image: "images/shoe13.jpg",
+        sizes: [
+          { number: 37, available: true },
+        ]
+      },
+      {
+        id: 11,
+        name: "Glossy PatentBlock Heel",
+        price: 130,
+        image: "images/shoe16.jpg",
+        sizes: [
+          { number: 38, available: true },
+        ]
+      },
+      {
+        id: 12,
+        name: "Two-strap Suede Birkenstock",
+        price: 150,
+        image: "images/shoe20.jpg",
+        sizes: [
+          { number: 39, available: true },
+        ]
+      },
+      {
+        id: 13,
+        name: "Square-toe block-heel Mules",
+        price: 100,
+        image: "images/shoe21.jpg",
+        sizes: [
+          { number: 37, available: true },
+        ]
+      },
+      {
+        id: 14,
+        name: "GUESS Black Flatform Slides",
+        price: 150,
+        image: "images/shoe22.jpg",
+        sizes: [
+          { number: 38, available: true },
+        ]
+      },
+      {
+        id: 15,
+        name: "PUMA Flatter Sandals",
+        price: 100,
+        image: "images/shoe23.jpg",
+        sizes: [
+          { number: 39, available: true },
+        ]
+      },
+      {
+        id: 16,
+        name: "Tweed Pointed-toe Pumps",
+        price: 90,
+        image: "images/shoe24.jpg",
+        sizes: [
+          { number: 37, available: true },
+        ]
+      },
+      {
+        id: 17,
+        name: "Burberry TB Slide",
+        price: 130,
+        image: "images/shoe25.jpg",
+        sizes: [
+          { number: 40, available: true },
+        ]
+      }
+    ];
+
+    /* ==========================================
+       STORE FUNCTIONS
+       ========================================== */
+
+    const selectedSizes = {};
+
+    const productList = document.getElementById("product-list");
+    const paymentSection = document.getElementById("payment");
+
+    function formatPrice(price) {
+      return "GH₵" + Number(price).toFixed(2);
+    }
+
+    function renderProducts() {
+      productList.innerHTML = "";
+
+      products.forEach(product => {
+        const availableSizes = product.sizes.filter(size => size.available);
+        const allSoldOut = availableSizes.length === 0;
+        const selectedSize = selectedSizes[product.id];
+
+        const card = document.createElement("article");
+        card.className = "product-card";
+
+        const imageWrap = document.createElement("div");
+        imageWrap.className = "product-image-wrap";
+
+        const image = document.createElement("img");
+        image.className = "product-image";
+        image.src = product.image;
+        image.alt = product.name;
+        image.loading = "lazy";
+        image.addEventListener("click", () => openImage(product.image, product.name));
+
+        const hint = document.createElement("span");
+        hint.className = "image-hint";
+        hint.textContent = "Click to enlarge";
+
+        imageWrap.append(image, hint);
+
+        const info = document.createElement("div");
+        info.className = "product-info";
+
+        const name = document.createElement("h3");
+        name.textContent = product.name;
+
+        const price = document.createElement("div");
+        price.className = "price";
+        price.textContent = formatPrice(product.price);
+
+        const sizeLabel = document.createElement("span");
+        sizeLabel.className = "size-label";
+        sizeLabel.textContent = "Select your size:";
+
+        const sizeOptions = document.createElement("div");
+        sizeOptions.className = "size-options";
+
+        product.sizes.forEach(size => {
+          const button = document.createElement("button");
+          button.className = "size-btn";
+          button.textContent = size.number;
+          button.disabled = !size.available;
+          button.title = size.available ? "Select size " + size.number : "Sold out";
+
+          if (!size.available) {
+            button.textContent = size.number + " ×";
+          }
+
+          if (selectedSize === size.number && size.available) {
+            button.classList.add("selected");
+          }
+
+          button.addEventListener("click", () => {
+            selectedSizes[product.id] = size.number;
+            renderProducts();
+          });
+
+          sizeOptions.appendChild(button);
+        });
+
+        const stockNote = document.createElement("p");
+        stockNote.className = "stock-note";
+        stockNote.textContent = allSoldOut ? "All sizes sold out" : "";
+
+        const buyButton = document.createElement("button");
+        buyButton.className = "buy-btn";
+        buyButton.textContent = allSoldOut ? "SOLD OUT" : "BUY NOW";
+
+        const selectedSizeIsAvailable = product.sizes.some(
+          size => size.number === selectedSize && size.available
+        );
+
+        buyButton.disabled = allSoldOut || !selectedSizeIsAvailable;
+
+        buyButton.addEventListener("click", () => {
+          openPaymentPage(product, selectedSize);
+        });
+
+        const enquireLink = document.createElement("a");
+        enquireLink.className = "enquire-link";
+        enquireLink.href = createEnquiryLink(product, selectedSize);
+        enquireLink.target = "_blank";
+        enquireLink.rel = "noopener";
+        enquireLink.textContent = "Ask us about this product";
+
+        info.append(
+          name,
+          price,
+          sizeLabel,
+          sizeOptions,
+          stockNote,
+          buyButton,
+          enquireLink
+        );
+
+        card.append(imageWrap, info);
+        productList.appendChild(card);
+      });
+    }
+
+    function createEnquiryLink(product, size) {
+      let message = "Hello Glam Your Feet, I am interested in " +
+        product.name + " (" + formatPrice(product.price) + ").";
+
+      if (size) {
+        message += " My preferred size is " + size + ".";
+      } else {
+        message += " Please let me know the available sizes.";
+      }
+
+      return "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+    }
+
+    function openPaymentPage(product, size) {
+      const selectedStock = product.sizes.find(
+        item => item.number === size && item.available
+      );
+
+      if (!selectedStock) {
+        alert("Sorry, this size is no longer available.");
+        renderProducts();
+        return;
+      }
+
+      document.getElementById("order-image").src = product.image;
+      document.getElementById("order-image").alt = product.name;
+      document.getElementById("order-name").textContent = product.name;
+      document.getElementById("order-size").textContent = "Selected size: " + size;
+      document.getElementById("order-price").textContent = formatPrice(product.price);
+      document.getElementById("payment-amount").textContent = formatPrice(product.price);
+      document.getElementById("momo-display").textContent = MOMO_NUMBER;
+
+      document.getElementById("order-image").onclick = () => {
+        openImage(product.image, product.name);
+      };
+
+      const confirmationMessage =
+        "Hello Glam Your Feet, I have made payment for my order.\n\n" +
+        "Product: " + product.name + "\n" +
+        "Size: " + size + "\n" +
+        "Amount: " + formatPrice(product.price) + "\n" +
+        "Please let me know how to submit my payment confirmation.";
+
+      document.getElementById("payment-whatsapp").href =
+        "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(confirmationMessage);
+
+      paymentSection.classList.add("visible");
+      paymentSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    /* ==========================================
+       COPY MOMO NUMBER
+       ========================================== */
+
+    document.getElementById("copy-momo").addEventListener("click", async () => {
+      const button = document.getElementById("copy-momo");
+
+      try {
+        await navigator.clipboard.writeText(MOMO_NUMBER);
+        button.textContent = "NUMBER COPIED!";
+      } catch (error) {
+        const temporaryInput = document.createElement("textarea");
+        temporaryInput.value = MOMO_NUMBER;
+        document.body.appendChild(temporaryInput);
+        temporaryInput.select();
+        document.execCommand("copy");
+        temporaryInput.remove();
+        button.textContent = "NUMBER COPIED!";
+      }
+
+      setTimeout(() => {
+        button.textContent = "COPY MOMO NUMBER";
+      }, 2500);
+    });
+
+    /* ==========================================
+       RETURN TO COLLECTION
+       ========================================== */
+
+    document.getElementById("back-to-shop").addEventListener("click", () => {
+      paymentSection.classList.remove("visible");
+      document.getElementById("collections").scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+
+    /* ==========================================
+       IMAGE ENLARGEMENT
+       ========================================== */
+
+    const imageModal = document.getElementById("image-modal");
+    const modalImage = document.getElementById("modal-image");
+
+    function openImage(src, alt) {
+      modalImage.src = src;
+      modalImage.alt = alt;
+      imageModal.classList.add("open");
+    }
+
+    function closeImage() {
+      imageModal.classList.remove("open");
+      modalImage.src = "";
+    }
+
+    document.getElementById("modal-close").addEventListener("click", closeImage);
+
+    imageModal.addEventListener("click", event => {
+      if (event.target === imageModal) {
+        closeImage();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeImage();
+      }
+    });
+
+    /* ==========================================
+       FOOTER YEAR AND INITIAL DISPLAY
+       ========================================== */
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    renderProducts();
+  </script>
+
+</body>
+</html>
