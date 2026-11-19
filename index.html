@@ -25,9 +25,7 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -97,9 +95,7 @@
       text-transform: uppercase;
     }
 
-    nav a:hover {
-      color: var(--gold);
-    }
+    nav a:hover { color: var(--gold); }
 
     .hero {
       min-height: 510px;
@@ -112,9 +108,7 @@
       color: white;
     }
 
-    .hero-content {
-      max-width: 560px;
-    }
+    .hero-content { max-width: 560px; }
 
     .eyebrow {
       color: #e7c99e;
@@ -164,13 +158,9 @@
       color: white;
     }
 
-    .secondary-btn:hover {
-      background: var(--dark);
-    }
+    .secondary-btn:hover { background: var(--dark); }
 
-    section {
-      padding: 75px 7%;
-    }
+    section { padding: 75px 7%; }
 
     .section-heading {
       text-align: center;
@@ -244,9 +234,7 @@
       pointer-events: none;
     }
 
-    .product-info {
-      padding: 18px 7px 8px;
-    }
+    .product-info { padding: 18px 7px 8px; }
 
     .product-info h3 {
       font-family: Georgia, "Times New Roman", serif;
@@ -292,11 +280,16 @@
       border-color: var(--brown);
     }
 
+    /* SOLD OUT SIZE DISPLAY */
     .size-btn:disabled {
-      color: #aaa;
-      background: #f0ece7;
-      text-decoration: line-through;
+      color: #a34b3e;
+      background: #f5e9e5;
+      border: 1px solid #e2c6bd;
+      font-size: 10px;
+      font-weight: bold;
+      text-decoration: none;
       cursor: not-allowed;
+      padding: 7px 9px;
     }
 
     .stock-note {
@@ -367,9 +360,7 @@
       padding-bottom: 65px;
     }
 
-    .payment-section.visible {
-      display: block;
-    }
+    .payment-section.visible { display: block; }
 
     .payment-panel {
       max-width: 650px;
@@ -454,9 +445,7 @@
       font-size: 13px;
     }
 
-    .detail-row:last-of-type {
-      border-bottom: none;
-    }
+    .detail-row:last-of-type { border-bottom: none; }
 
     .detail-row strong {
       color: var(--brown);
@@ -474,9 +463,7 @@
       letter-spacing: 1px;
     }
 
-    .copy-btn:hover {
-      background: #e5d4c1;
-    }
+    .copy-btn:hover { background: #e5d4c1; }
 
     .instructions {
       margin: 20px 0;
@@ -504,9 +491,7 @@
       gap: 10px;
     }
 
-    .payment-actions a {
-      text-align: center;
-    }
+    .payment-actions a { text-align: center; }
 
     .back-btn {
       display: block;
@@ -579,11 +564,10 @@
       box-shadow: 0 5px 18px rgba(0,0,0,.2);
     }
 
-    .whatsapp-float:hover {
-      background: #1c6238;
-    }
+    .whatsapp-float:hover { background: #1c6238; }
 
-    /* Image enlargement */
+    /* IMAGE ENLARGEMENT */
+
     .image-modal {
       display: none;
       position: fixed;
@@ -595,9 +579,7 @@
       padding: 25px;
     }
 
-    .image-modal.open {
-      display: flex;
-    }
+    .image-modal.open { display: flex; }
 
     .image-modal img {
       max-width: 92%;
@@ -616,10 +598,116 @@
       line-height: 1;
     }
 
+    .image-modal img {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+    /* SIZE SELECTION POP-UP */
+
+    .size-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(20, 13, 9, .75);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .size-modal.open { display: flex; }
+
+    .size-modal-content {
+      background: var(--white);
+      width: 100%;
+      max-width: 420px;
+      padding: 30px;
+      position: relative;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 15px 40px rgba(0,0,0,.2);
+    }
+
+    .size-modal-content h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--brown);
+      font-size: 28px;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+
+    .size-modal-content p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    .size-modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      border: none;
+      background: transparent;
+      color: var(--brown);
+      font-size: 28px;
+    }
+
+    .modal-size-options {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0;
+    }
+
+    .modal-size-btn {
+      min-width: 48px;
+      padding: 12px;
+      background: white;
+      color: var(--brown);
+      border: 1px solid var(--border);
+    }
+
+    .modal-size-btn.selected {
+      background: var(--brown);
+      color: white;
+      border-color: var(--brown);
+    }
+
+    .modal-size-btn:disabled {
+      background: #f5e9e5;
+      color: #a34b3e;
+      border: 1px solid #e2c6bd;
+      font-size: 10px;
+      font-weight: bold;
+      cursor: not-allowed;
+      text-decoration: none;
+    }
+
+    .modal-continue-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      background: var(--brown);
+      color: white;
+      letter-spacing: 1px;
+      font-size: 12px;
+    }
+
+    .modal-continue-btn:hover:not(:disabled) {
+      background: var(--gold);
+    }
+
+    .modal-continue-btn:disabled {
+      background: #c9beb4;
+      cursor: not-allowed;
+    }
+
     @media (max-width: 850px) {
-      header {
-        flex-direction: column;
-      }
+      header { flex-direction: column; }
 
       nav {
         justify-content: center;
@@ -631,23 +719,15 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .product-image {
-        height: 260px;
-      }
+      .product-image { height: 260px; }
     }
 
     @media (max-width: 560px) {
-      .announcement {
-        font-size: 10px;
-      }
+      .announcement { font-size: 10px; }
 
-      header {
-        padding: 17px 5%;
-      }
+      header { padding: 17px 5%; }
 
-      .brand {
-        font-size: 25px;
-      }
+      .brand { font-size: 25px; }
 
       nav {
         gap: 12px;
@@ -660,39 +740,27 @@
         background-position: 60% center;
       }
 
-      .hero h1 {
-        font-size: 44px;
-      }
+      .hero h1 { font-size: 44px; }
 
-      section {
-        padding: 55px 5%;
-      }
+      section { padding: 55px 5%; }
 
       .products {
         grid-template-columns: 1fr;
         gap: 22px;
       }
 
-      .product-image {
-        height: 330px;
-      }
+      .product-image { height: 330px; }
 
-      .payment-panel {
-        padding: 20px 15px;
-      }
+      .payment-panel { padding: 20px 15px; }
 
-      .payment-panel h2 {
-        font-size: 29px;
-      }
+      .payment-panel h2 { font-size: 29px; }
 
       .order-summary img {
         width: 78px;
         height: 85px;
       }
 
-      .detail-row {
-        font-size: 12px;
-      }
+      .detail-row { font-size: 12px; }
 
       .contact-numbers {
         flex-direction: column;
@@ -703,6 +771,8 @@
         right: 12px;
         bottom: 12px;
       }
+
+      .size-modal-content { padding: 25px 18px; }
     }
   </style>
 </head>
@@ -728,6 +798,7 @@
   </header>
 
   <main>
+
     <section class="hero" id="home">
       <div class="hero-content">
         <div class="eyebrow">Your style begins from the ground up</div>
@@ -858,6 +929,7 @@
         </a>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -873,15 +945,41 @@
     WhatsApp Us
   </a>
 
-  <div class="image-modal" id="image-modal" aria-label="Enlarged product image">
-    <button class="modal-close" id="modal-close" aria-label="Close image">&times;</button>
-    <img id="modal-image" src="" alt="Enlarged footwear image">
+  <!-- IMAGE ENLARGEMENT POP-UP -->
+
+<div class="image-modal" id="image-modal" aria-label="Enlarged product image">
+  <button class="modal-close" id="modal-close" aria-label="Close image">&times;</button>
+  <img id="modal-image" src="" alt="Enlarged footwear image">
+</div>
+
+  <!-- SIZE SELECTION POP-UP -->
+
+  <div class="size-modal" id="size-modal">
+    <div class="size-modal-content">
+
+      <button class="size-modal-close" id="size-modal-close" aria-label="Close">
+        &times;
+      </button>
+
+      <h2>Choose Your Size</h2>
+
+      <p id="modal-product-name"></p>
+
+      <div class="modal-size-options" id="modal-size-options"></div>
+
+      <p id="modal-size-message">Please select your preferred size.</p>
+
+      <button class="modal-continue-btn" id="modal-continue" disabled>
+        CONTINUE TO PAYMENT
+      </button>
+
+    </div>
   </div>
 
   <script>
+
     /* ==========================================
        GLAM YOUR FEET - STORE INFORMATION
-       Edit your products and stock in this section.
        ========================================== */
 
     const MOMO_NUMBER = "0599735865";
@@ -897,136 +995,146 @@
       to:
       available: false
 
-      Example:
-      { number: 40, available: false }
-
       Remember to publish the updated website after editing.
     */
 
     const products = [
       {
         id: 1,
-        name: "Zara Nude Slingback Heel",
-        price: 170,
-        image: "images/shoe6.jpg",
+        name: "Black Braided Thong Sandals",
+        price: 120,
+        image: "images/shoe1.jpg",
+        extraImage: "images/shoe1-detail.jpg",
         sizes: [
-          { number: 40, available: true }
+          { number: 38, available: true }
         ]
       },
       {
         id: 2,
-        name: "Zebra Print Statement Heels",
-        price: 150,
-        image: "images/shoe10.jpg",
+        name: "Gilded Knot-Strap Sandals",
+        price: 120,
+        image: "images/shoe2.jpg",
+        extraImage: "images/shoe2-detail.jpg",
         sizes: [
-          { number: 39, available: true },
-          { number: 40, available: false }
+          { number: 41, available: true },
+
         ]
       },
       {
         id: 3,
-        name: "Jessy Bow Slingback Heel",
-        price: 130,
-        image: "images/shoe9.jpg",
+        name: "White Ivory Strap Block Heel",
+        price: 150,
+        image: "images/shoe3.jpg",
+        extraImage: "images/shoe3-detail.jpg",
         sizes: [
-          { number: 40, available: true },
-          { number: 39, available: false }
+          { number: 38, available: true },
+          
         ]
       },
       {
         id: 4,
-        name: "Clear-strap Block Heel",
+        name: "Burgundy Block Heel",
         price: 130,
-        image: "images/shoe11.jpg",
+        image: "images/shoe4.jpg",
+        extraImage: "images/shoe4-detail.jpg",
         sizes: [
-          { number: 38, available: true },
-          { number: 39, available: true }
+          { number: 37, available: true },
+       
         ]
       },
       {
         id: 5,
-        name: "Pearl Bow Heel",
-        price: 130,
-        image: "images/shoe12.jpg",
+        name: "Zebra Strip Pointed Heel ",
+        price: 150,
+        image: "images/shoe5.jpg",
+        extraImage: "images/shoe5-detail.jpg",
         sizes: [
-          { number: 40, available: true },
-          { number: 39, available: false }
+          { number: 39, available: true },
+          
         ]
       },
       {
         id: 6,
-        name: "Rhinestone Bow Slingback Heel",
-        price: 130,
-        image: "images/shoe14.jpg",
+        name: "Onyx Thong Pump",
+        price: 120,
+        image: "images/shoe6.jpg",
+        extraImage: "images/shoe6-detail.jpg",
         sizes: [
           { number: 40, available: true },
-          { number: 39, available: false }
+         
         ]
       },
       {
         id: 7,
-        name: "Studded Kitten Slingback Heel",
-        price: 140,
-        image: "images/shoe17.jpg",
+        name: "Pearl Blossom Kitten Heel",
+        price: 130,
+        image: "images/shoe7.jpg",
+        extraImage: "images/shoe7-detail.jpg",
         sizes: [
-          { number: 40, available: true },
-          { number: 39, available: false }
+          { number: 42, available: true },
+       
         ]
       },
       {
         id: 8,
-        name: "Zara Bow Kitten Heel",
-        price: 150,
-        image: "images/shoe18.jpg",
+        name: "Flutter Slide",
+        price: 90,
+        image: "images/shoe8.jpg",
+        extraImage: "images/shoe8-detail.jpg",
         sizes: [
-          { number: 41, available: true },
-          { number: 40, available: true }
+          { number: 37, available: true },
+          
         ]
       },
       {
         id: 9,
-        name: "Merlot Block Heel",
-        price: 120,
-        image: "images/shoe15.jpg",
+        name: "Chrome Block",
+        price: 100,
+        image: "images/shoe9.jpg",
+        extraImage: "images/shoe9-detail.jpg",
         sizes: [
-          { number: 38, available: true },
-          { number: 39, available: false }
+          { number: 42, available: true },
+        
         ]
       },
       {
         id: 10,
-        name: "Navy Suede Slingback block Heel",
-        price: 100,
-        image: "images/shoe13.jpg",
+        name: "Noir Bow Slingback Heel",
+        price: 130,
+        image: "images/shoe10.jpg",
+        extraImage: "images/shoe10-detail.jpg",
         sizes: [
-          { number: 37, available: true },
+          { number: 42, available: true }
         ]
       },
       {
         id: 11,
-        name: "Glossy PatentBlock Heel",
-        price: 130,
-        image: "images/shoe16.jpg",
+        name: "Unisex Slate Cross Slide",
+        price: 150,
+        image: "images/shoe11.jpg",
+        extraImage: "images/shoe11-detail.jpg",
         sizes: [
-          { number: 38, available: true },
+          { number: 41, available: true }
         ]
       },
       {
         id: 12,
-        name: "Two-strap Suede Birkenstock",
-        price: 150,
-        image: "images/shoe20.jpg",
+        name: "Unisex Dual Buckle Slide",
+        price: 120,
+        image: "images/shoe12.jpg",
+        extraImage: "images/shoe12-detail.jpg",
         sizes: [
-          { number: 39, available: true },
+          { number: 37, available: false}
         ]
       },
       {
         id: 13,
-        name: "Square-toe block-heel Mules",
-        price: 100,
-        image: "images/shoe21.jpg",
+         name: "Cleo Clear Mule Heel",
+        price: 130,
+        image: "images/shoe13.jpg",
+        extraImage: "images/shoe13-detail.jpg",
         sizes: [
-          { number: 37, available: true },
+          { number: 38, available: true }
         ]
       },
       {
@@ -1035,7 +1143,7 @@
         price: 150,
         image: "images/shoe22.jpg",
         sizes: [
-          { number: 38, available: true },
+          { number: 38, available: false}
         ]
       },
       {
@@ -1044,7 +1152,7 @@
         price: 100,
         image: "images/shoe23.jpg",
         sizes: [
-          { number: 39, available: true },
+          { number: 39, available: true }
         ]
       },
       {
@@ -1053,7 +1161,7 @@
         price: 90,
         image: "images/shoe24.jpg",
         sizes: [
-          { number: 37, available: true },
+          { number: 37, available: true }
         ]
       },
       {
@@ -1062,7 +1170,7 @@
         price: 130,
         image: "images/shoe25.jpg",
         sizes: [
-          { number: 40, available: true },
+          { number: 40, available: false}
         ]
       }
     ];
@@ -1099,7 +1207,7 @@
         image.src = product.image;
         image.alt = product.name;
         image.loading = "lazy";
-        image.addEventListener("click", () => openImage(product.image, product.name));
+        image.addEventListener("click", () => openImage(product));
 
         const hint = document.createElement("span");
         hint.className = "image-hint";
@@ -1129,10 +1237,12 @@
           button.className = "size-btn";
           button.textContent = size.number;
           button.disabled = !size.available;
-          button.title = size.available ? "Select size " + size.number : "Sold out";
+          button.title = size.available
+            ? "Select size " + size.number
+            : "Sold out";
 
           if (!size.available) {
-            button.textContent = size.number + " ×";
+            button.textContent = size.number + " SOLD OUT";
           }
 
           if (selectedSize === size.number && size.available) {
@@ -1155,14 +1265,10 @@
         buyButton.className = "buy-btn";
         buyButton.textContent = allSoldOut ? "SOLD OUT" : "BUY NOW";
 
-        const selectedSizeIsAvailable = product.sizes.some(
-          size => size.number === selectedSize && size.available
-        );
-
-        buyButton.disabled = allSoldOut || !selectedSizeIsAvailable;
+        buyButton.disabled = allSoldOut;
 
         buyButton.addEventListener("click", () => {
-          openPaymentPage(product, selectedSize);
+          openSizeSelector(product);
         });
 
         const enquireLink = document.createElement("a");
@@ -1201,6 +1307,10 @@
         "?text=" + encodeURIComponent(message);
     }
 
+    /* ==========================================
+       PAYMENT PAGE
+       ========================================== */
+
     function openPaymentPage(product, size) {
       const selectedStock = product.sizes.find(
         item => item.number === size && item.available
@@ -1221,7 +1331,7 @@
       document.getElementById("momo-display").textContent = MOMO_NUMBER;
 
       document.getElementById("order-image").onclick = () => {
-        openImage(product.image, product.name);
+        openImage(product);
       };
 
       const confirmationMessage =
@@ -1236,8 +1346,96 @@
         "?text=" + encodeURIComponent(confirmationMessage);
 
       paymentSection.classList.add("visible");
-      paymentSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      paymentSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
     }
+
+    /* ==========================================
+       SIZE SELECTION POP-UP
+       ========================================== */
+
+    let currentProduct = null;
+    let currentSize = null;
+
+    function openSizeSelector(product) {
+      currentProduct = product;
+      currentSize = null;
+
+      const modal = document.getElementById("size-modal");
+      const productName = document.getElementById("modal-product-name");
+      const sizeContainer = document.getElementById("modal-size-options");
+      const message = document.getElementById("modal-size-message");
+      const continueButton = document.getElementById("modal-continue");
+
+      productName.textContent = product.name;
+      sizeContainer.innerHTML = "";
+
+      message.textContent = "Please select your preferred size.";
+      continueButton.disabled = true;
+
+      product.sizes.forEach(size => {
+        const button = document.createElement("button");
+
+        button.className = "modal-size-btn";
+
+        button.textContent = size.available
+          ? size.number
+          : size.number + " - SOLD OUT";
+
+        button.disabled = !size.available;
+
+        button.addEventListener("click", () => {
+          document.querySelectorAll(".modal-size-btn").forEach(btn => {
+            btn.classList.remove("selected");
+          });
+
+          button.classList.add("selected");
+
+          currentSize = size.number;
+          continueButton.disabled = false;
+
+          message.textContent = "Selected size: " + size.number;
+        });
+
+        sizeContainer.appendChild(button);
+      });
+
+      modal.classList.add("open");
+    }
+
+    function closeSizeSelector() {
+      document.getElementById("size-modal").classList.remove("open");
+    }
+
+    document.getElementById("size-modal-close").addEventListener(
+      "click",
+      closeSizeSelector
+    );
+
+    document.getElementById("size-modal").addEventListener("click", event => {
+      if (event.target.id === "size-modal") {
+        closeSizeSelector();
+      }
+    });
+
+    document.getElementById("modal-continue").addEventListener("click", () => {
+      if (!currentProduct || currentSize === null) {
+        return;
+      }
+
+      const product = currentProduct;
+      const size = currentSize;
+
+      closeSizeSelector();
+
+      selectedSizes[product.id] = size;
+
+      renderProducts();
+
+      openPaymentPage(product, size);
+    });
 
     /* ==========================================
        COPY MOMO NUMBER
@@ -1270,40 +1468,74 @@
 
     document.getElementById("back-to-shop").addEventListener("click", () => {
       paymentSection.classList.remove("visible");
+
       document.getElementById("collections").scrollIntoView({
         behavior: "smooth"
       });
     });
 
-    /* ==========================================
-       IMAGE ENLARGEMENT
-       ========================================== */
+   /* ==========================================
+   IMAGE ENLARGEMENT AND IMAGE SWITCHING
+   ========================================== */
 
-    const imageModal = document.getElementById("image-modal");
-    const modalImage = document.getElementById("modal-image");
+const imageModal = document.getElementById("image-modal");
+const modalImage = document.getElementById("modal-image");
 
-    function openImage(src, alt) {
-      modalImage.src = src;
-      modalImage.alt = alt;
-      imageModal.classList.add("open");
-    }
+let currentModalProduct = null;
+let showingExtraImage = false;
 
-    function closeImage() {
-      imageModal.classList.remove("open");
-      modalImage.src = "";
-    }
+function openImage(product) {
+  currentModalProduct = product;
+  showingExtraImage = false;
 
-    document.getElementById("modal-close").addEventListener("click", closeImage);
+  modalImage.src = product.image;
+  modalImage.alt = product.name;
 
-    imageModal.addEventListener("click", event => {
-      if (event.target === imageModal) {
-        closeImage();
-      }
-    });
+  imageModal.classList.add("open");
+}
+
+function switchProductImage() {
+  if (!currentModalProduct || !currentModalProduct.extraImage) {
+    return;
+  }
+
+  showingExtraImage = !showingExtraImage;
+
+  modalImage.style.opacity = "0";
+
+  setTimeout(() => {
+    modalImage.src = showingExtraImage
+      ? currentModalProduct.extraImage
+      : currentModalProduct.image;
+
+    modalImage.alt = currentModalProduct.name;
+    modalImage.style.opacity = "1";
+  }, 150);
+}
+
+modalImage.addEventListener("click", switchProductImage);
+
+function closeImage() {
+  imageModal.classList.remove("open");
+  modalImage.src = "";
+  currentModalProduct = null;
+  showingExtraImage = false;
+}
+
+document.getElementById("modal-close").addEventListener("click", closeImage);
+
+imageModal.addEventListener("click", event => {
+  if (event.target === imageModal) {
+    closeImage();
+  }
+});
+
+    /* ESCAPE KEY CLOSES BOTH POP-UPS */
 
     document.addEventListener("keydown", event => {
       if (event.key === "Escape") {
         closeImage();
+        closeSizeSelector();
       }
     });
 
@@ -1314,6 +1546,7 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     renderProducts();
+
   </script>
 
 </body>
